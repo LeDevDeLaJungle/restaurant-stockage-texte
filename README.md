@@ -6,7 +6,7 @@ Une application Java en ligne de commande permettant de gérer les réservations
 
 restaurant/
 - model/ # Entités : Client, Restaurant, Reservation
-- dao/ # Accès aux fichiers texte
+- repository/ # Accès aux fichiers texte
 - service/ # Logique métier
 - controller/ # Interface utilisateur via terminal
 - Main.java # Point d'entrée de l'application
