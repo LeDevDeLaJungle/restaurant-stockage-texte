@@ -17,20 +17,17 @@ public class ReservationService {
     }
   }
 
-  public List<Reservation> list() {
-    return reservations;
-  }
+  public List<Reservation> list() { return reservations; }
 
-  public void add(String nomClient, String date, int nbPersonnes) {
-    Reservation r = new Reservation(nextId++, nomClient, date, nbPersonnes);
+  public void add(int clientId, int restaurantId, String date, int nbPersonnes) {
+    Reservation r = new Reservation(nextId++, clientId, restaurantId, date, nbPersonnes);
     reservations.add(r);
     repository.saveAll(reservations);
   }
 
-  public boolean update(int id, String nomClient, String date, int nbPersonnes) {
+  public boolean update(int id, String date, int nbPersonnes) {
     for (Reservation r : reservations) {
       if (r.getId() == id) {
-        r.setNomClient(nomClient);
         r.setDate(date);
         r.setNbPersonnes(nbPersonnes);
         repository.saveAll(reservations);

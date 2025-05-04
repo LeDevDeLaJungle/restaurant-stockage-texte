@@ -1,28 +1,26 @@
 package repository;
 
-import model.Reservation;
-
+import model.Restaurant;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class ReservationRepository {
-  private final String filename = "reservations.txt";
+public class RestaurantRepository {
+  private final String filename = "restaurants.txt";
 
-  public List<Reservation> findAll() {
-    List<Reservation> list = new ArrayList<>();
+  public List<Restaurant> findAll() {
+    List<Restaurant> list = new ArrayList<>();
     try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
       String line;
       while ((line = br.readLine()) != null) {
-        list.add(Reservation.fromString(line));
+        list.add(Restaurant.fromString(line));
       }
     } catch (IOException e) {}
     return list;
   }
 
-  public void saveAll(List<Reservation> reservations) {
+  public void saveAll(List<Restaurant> restaurants) {
     try (PrintWriter pw = new PrintWriter(new FileWriter(filename))) {
-      for (Reservation r : reservations) {
+      for (Restaurant r : restaurants) {
         pw.println(r);
       }
     } catch (IOException e) {

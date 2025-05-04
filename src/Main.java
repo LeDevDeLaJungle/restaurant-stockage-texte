@@ -1,7 +1,8 @@
-import controller.ReservationController;
+import controller.MainController;
 
 public class Main {
   public static void main(String[] args) {
-    new ReservationController().start();
+    MainController controller = new MainController();
+    controller.start();
   }
 }
