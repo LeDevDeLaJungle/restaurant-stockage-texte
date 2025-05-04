@@ -37,7 +37,7 @@ Les données sont sauvegardées dans les fichiers suivants :
 javac Main.java controller/*.java service/*.java dao/*.java model/*.java
 ```
 
-2. Exécution
+### 2. Exécution
 
 ```bash
 java Main
