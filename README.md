@@ -34,7 +34,7 @@ Les données sont sauvegardées dans les fichiers suivants :
 ### 1. Compilation
 
 ```bash
-javac Main.java controller/*.java service/*.java dao/*.java model/*.java
+javac Main.java controller/*.java service/*.java repository/*.java model/*.java
 ```
 
 ### 2. Exécution
